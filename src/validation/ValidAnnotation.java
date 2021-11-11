@@ -12,7 +12,7 @@ public class ValidAnnotation {
 
 
     public static void validEmail(Object email) throws IllegalAccessException {
-        Field[] fields = email.getClass().getFields();
+        Field[] fields = email.getClass().getDeclaredFields();
         for (Field field : fields) {
             field.setAccessible(true);
             if (field.isAnnotationPresent(Email.class)) {
@@ -24,7 +24,7 @@ public class ValidAnnotation {
     }
 
     public static void validAdulthood(Object adulthood) throws IllegalAccessException {
-        Field[] fields = adulthood.getClass().getFields();
+        Field[] fields = adulthood.getClass().getDeclaredFields();
         for (Field field : fields) {
             field.setAccessible(true);
             if (field.isAnnotationPresent(Adulthood.class)) {
@@ -39,7 +39,7 @@ public class ValidAnnotation {
     }
 
     public static void validLenght(Object lenght) throws IllegalAccessException {
-        Field[] fields = lenght.getClass().getFields();
+        Field[] fields = lenght.getClass().getDeclaredFields();
         for (Field field : fields) {
             field.setAccessible(true);
             if (field.isAnnotationPresent(Length.class)) {
@@ -53,7 +53,7 @@ public class ValidAnnotation {
     }
 
     public static void validMaxMin(Object maxMin) throws IllegalAccessException {
-        Field[] fields = maxMin.getClass().getFields();
+        Field[] fields = maxMin.getClass().getDeclaredFields();
         for (Field field : fields) {
             field.setAccessible(true);
             if (field.isAnnotationPresent(Min.class) && field.isAnnotationPresent(Max.class)) {
